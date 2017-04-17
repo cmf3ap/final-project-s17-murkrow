@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "978482899414",
+    "firebase_url": "https://hoowantsbrunch.firebaseio.com",
+    "project_id": "hoowantsbrunch",
+    "storage_bucket": "hoowantsbrunch.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:978482899414:android:3b05a5395ef71dda",
+        "android_client_info": {
+          "package_name": "cs4720.cs.virginia.edu.hoowantsbrunch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "978482899414-8nlaiu1hbc08bgbv87mjkc1uur852cdg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cs4720.cs.virginia.edu.hoowantsbrunch",
+            "certificate_hash": "863e30ed68a56e6b6eeece44331fa51236b77512"
+          }
+        },
+        {
+          "client_id": "978482899414-db0cehvnb3047lio7e06885e99k5dq0i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAmu2NPh-VKf06WvHH6VLNG-fMObyQ-GQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "978482899414-db0cehvnb3047lio7e06885e99k5dq0i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
