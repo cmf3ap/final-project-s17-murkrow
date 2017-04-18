@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         viewRestaurants.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //do something
+                viewRestaurants(view);
             }
         });
         findRestaurants = (Button) findViewById(R.id.findRestaurant);
@@ -39,6 +39,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void viewRestaurants(View view) {
+        Intent intent = new Intent(this, ViewRestaurants.class);
+        startActivity(intent);
     }
 
     public void findRestaurant(View view) {

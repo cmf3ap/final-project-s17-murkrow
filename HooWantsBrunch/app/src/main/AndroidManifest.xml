@@ -21,10 +21,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FindRestaurant"></activity>
+        <activity android:name=".FindRestaurant" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBoM_X2LM_uHLW8mv1QqD9QMXuonkUC8XU"/>
+            android:value="AIzaSyBoM_X2LM_uHLW8mv1QqD9QMXuonkUC8XU" />
+
+        <activity android:name=".ViewRestaurants"></activity>
     </application>
 
 </manifest>
