@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
+import android.content.Intent;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -34,10 +35,15 @@ public class MainActivity extends AppCompatActivity {
         findRestaurants.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //do something
+                findRestaurant(view);
             }
         });
 
+    }
+
+    public void findRestaurant(View view) {
+        Intent intent = new Intent(this, FindRestaurant.class);
+        startActivity(intent);
     }
 
 }
