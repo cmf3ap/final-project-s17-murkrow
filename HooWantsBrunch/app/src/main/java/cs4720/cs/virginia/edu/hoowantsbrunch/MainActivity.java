@@ -1,5 +1,6 @@
 package cs4720.cs.virginia.edu.hoowantsbrunch;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         addReview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //do something
+               openWriteReview(view);
             }
         });
         viewRestaurants = (Button) findViewById(R.id.viewRestaurants);
@@ -39,6 +40,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+    public void openWriteReview(View view) {
+        Intent intent = new Intent(this, WriteReview.class);
+        startActivity(intent);
     }
 
     public void viewRestaurants(View view) {
