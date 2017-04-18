@@ -21,13 +21,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FindRestaurant" />
+        <activity
+            android:name=".WriteReview"
+            android:label="Write a Review"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName="cs4720.cs.virginia.edu.hoowantsbrunch.MainActivity"
+        ></activity>
+        <activity android:name=".FindRestaurant"
+            android:parentActivityName="cs4720.cs.virginia.edu.hoowantsbrunch.MainActivity"
+            ></activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBoM_X2LM_uHLW8mv1QqD9QMXuonkUC8XU" />
 
-        <activity android:name=".ViewRestaurants"></activity>
+        <activity android:name=".ViewRestaurants"
+            android:parentActivityName="cs4720.cs.virginia.edu.hoowantsbrunch.MainActivity"
+            ></activity>
     </application>
 
 </manifest>
