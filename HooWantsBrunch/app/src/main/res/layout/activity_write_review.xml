@@ -39,7 +39,7 @@
         android:layout_width="200dp"
         android:layout_height="100dp"
         android:inputType="textPersonName"
-        android:text="Review content goes here..."
+        android:hint="Review content goes here..."
         android:ems="10"
         android:id="@+id/ReviewText"
         android:textAlignment="center"
