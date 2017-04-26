@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc3b8100-72b3-416f-9a46-ff1402251539" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HooWantsBrunch/app/src/main/java/cs4720/cs/virginia/edu/hoowantsbrunch/DatabaseHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HooWantsBrunch/app/src/main/java/cs4720/cs/virginia/edu/hoowantsbrunch/userReview.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HooWantsBrunch/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/HooWantsBrunch/app/src/main/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HooWantsBrunch/app/src/main/java/cs4720/cs/virginia/edu/hoowantsbrunch/ViewRestaurants.java" afterPath="$PROJECT_DIR$/HooWantsBrunch/app/src/main/java/cs4720/cs/virginia/edu/hoowantsbrunch/ViewRestaurants.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HooWantsBrunch/app/src/main/java/cs4720/cs/virginia/edu/hoowantsbrunch/WriteReview.java" afterPath="$PROJECT_DIR$/HooWantsBrunch/app/src/main/java/cs4720/cs/virginia/edu/hoowantsbrunch/WriteReview.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HooWantsBrunch/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/HooWantsBrunch/app/src/main/res/layout/activity_main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HooWantsBrunch/app/src/main/res/layout/activity_view_restaurants.xml" afterPath="$PROJECT_DIR$/HooWantsBrunch/app/src/main/res/layout/activity_view_restaurants.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HooWantsBrunch/app/src/main/res/layout/activity_write_review.xml" afterPath="$PROJECT_DIR$/HooWantsBrunch/app/src/main/res/layout/activity_write_review.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HooWantsBrunch/app/src/main/res/layout/content_view_restaurants.xml" afterPath="$PROJECT_DIR$/HooWantsBrunch/app/src/main/res/layout/content_view_restaurants.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HooWantsBrunch/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/HooWantsBrunch/app/src/main/res/values/strings.xml" />
     </list>
     <ignored path="final-project-s17-murkrow.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,7 +53,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="AndroidView" proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -66,13 +67,46 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="final-project-s17-murkrow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="final-project-s17-murkrow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="final-project-s17-murkrow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="final-project-s17-murkrow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="final-project-s17-murkrow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HooWantsBrunch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="AndroidView">
         <subPane />
       </pane>
-      <pane id="ProjectPane" />
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">

@@ -40,15 +40,10 @@
 
         android:layout_width="450dp"
         android:layout_height="100dp"
-<<<<<<< HEAD
-=======
         android:inputType="textPersonName"
         android:hint="Review content goes here..."
->>>>>>> origin/master
         android:ems="10"
         android:textAlignment="center"
-        android:inputType="textPersonName"
-        android:hint="Review content goes here..."
         android:layout_marginTop="35dp"
         android:layout_below="@+id/restaurants_spinner"
         android:layout_alignParentEnd="true"
