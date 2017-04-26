@@ -16,12 +16,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -31,13 +36,28 @@ public class FindRestaurant extends FragmentActivity implements OnMapReadyCallba
 
     private GoogleApiClient mGoogleApiClient;
     private ImageButton backToMain;
+    LocationManager locationManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_restaurant);
-        MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+
+        /* int status = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(this);
+
+        if (status != ConnectionResult.SUCCESS) { // Google Play Services are
+            // not available
+            GoogleApiAvailability.getInstance().getErrorDialog(this, status, 1).show();
+
+        } else { // Google Play Services are available
+            MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
+            mapFragment.getMapAsync(this);
+        } */
+
+        SupportMapFragment mapFragment = ((SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.map));
+        if (mapFragment != null) {
+            mapFragment.getMapAsync(this);
+        }
 
         backToMain = (ImageButton) findViewById(R.id.backButton);
         backToMain.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +78,7 @@ public class FindRestaurant extends FragmentActivity implements OnMapReadyCallba
     public void onMapReady(GoogleMap map) {
         LatLng rotunda = new LatLng(38.05889, -78.503450);
         map.addMarker(new MarkerOptions().position(rotunda).title("UVA Rotunda"));
-        map.moveCamera(CameraUpdateFactory.newLatLng(rotunda));
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(rotunda, 14.0f));
         LatLng aqui = new LatLng(38.023212, -78.470213);
         map.addMarker(new MarkerOptions().position(aqui).title("Aqui Es Mexico"));
         LatLng beer = new LatLng(38.024935, -78.468452);
