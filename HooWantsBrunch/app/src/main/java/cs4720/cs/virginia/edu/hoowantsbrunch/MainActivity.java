@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private Button addReview;
     private Button findRestaurants;
     private Button viewRestaurants;
+    private Button menus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,13 @@ public class MainActivity extends AppCompatActivity {
                 findRestaurant(view);
             }
         });
+        menus = (Button) findViewById(R.id.menus);
+        menus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openMenus(view);
+            }
+        });
 
     }
     public void openWriteReview(View view) {
@@ -53,6 +61,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void findRestaurant(View view) {
         Intent intent = new Intent(this, FindRestaurant.class);
+        startActivity(intent);
+    }
+
+    public void openMenus(View view) {
+        Intent intent = new Intent(this, MenusActivity.class);
         startActivity(intent);
     }
     

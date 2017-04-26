@@ -9,7 +9,7 @@
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/findToolbar"
-        android:layout_width="585dp"
+        android:layout_width="600dp"
         android:layout_height="wrap_content"
         android:background="@android:color/holo_orange_light"
         android:minHeight="?attr/actionBarSize"
