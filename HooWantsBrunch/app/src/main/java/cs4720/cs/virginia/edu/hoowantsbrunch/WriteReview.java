@@ -22,13 +22,29 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+
+import android.content.ContentValues;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import static android.R.attr.name;
+import static cs4720.cs.virginia.edu.hoowantsbrunch.userReview.readFromFile;
+import static cs4720.cs.virginia.edu.hoowantsbrunch.userReview.writeToFile;
 
 public class WriteReview extends AppCompatActivity {
 
@@ -38,8 +54,15 @@ public class WriteReview extends AppCompatActivity {
 
     ImageView imageView;
     Button takePictureButton;
-
+    EditText reviewContent;
+    TextView restaurantTest;
+    TextView contentTest;
     Uri file;
+    Spinner spinner;
+    String currRestaurant;
+    String currContent;
+    String restaurant;
+    String review;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +74,9 @@ public class WriteReview extends AppCompatActivity {
 
         takePictureButton = (Button) findViewById(R.id.takePictureButton);
         imageView = (ImageView) findViewById(R.id.imageView);
+        reviewContent = (EditText) findViewById(R.id.ReviewText);
+
+        spinner = (Spinner) findViewById(R.id.restaurants_spinner);
 
         // We are giving you the code that checks for permissions
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
@@ -58,7 +84,6 @@ public class WriteReview extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, new String[] { android.Manifest.permission.CAMERA, android.Manifest.permission.WRITE_EXTERNAL_STORAGE }, TAKE_PHOTO_PERMISSION);
         }
 
-        Spinner spinner = (Spinner) findViewById(R.id.restaurants_spinner);
 // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.restaurants_array, android.R.layout.simple_spinner_item);
@@ -98,8 +123,15 @@ public class WriteReview extends AppCompatActivity {
     }
 
     public void submitReview(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        userReview newReview = new userReview();
+        reviewContent = (EditText) findViewById(R.id.ReviewText);
+        newReview.review = reviewContent.getText().toString();
+
+        saveToDatabase(view);
+        loadFromDatabase(view);
+
+       // Intent intent = new Intent(this, MainActivity.class);
+       // startActivity(intent);
     }
     public void getImageFromLibrary(View view) {
         // Add code here to start the process of getting a picture from the library
@@ -170,5 +202,91 @@ public class WriteReview extends AppCompatActivity {
     // Add other methods as necessary here
 
 
+    public String getReview(String restaurant) {
+        DatabaseHelper mDbHelper = new DatabaseHelper(this);
+        SQLiteDatabase db = mDbHelper.getWritableDatabase();
+
+        String[] projection = {
+                "restaurantName",
+                "review"
+        };
+
+
+        //String sortOrder = "name" + " DESC";
+
+        Cursor c = db.query("restaurantReview", projection, null, null, null, null, null);
+
+        c.moveToFirst();
+//formatting to display to users!!
+        String currContent2 = "";
+        while(c.moveToNext()) {
+            String currRestaurant2 = c.getString(c.getColumnIndexOrThrow("restaurantName"));
+            if (restaurant.equals(currRestaurant2)) {
+                currContent2 += "\r\n" + "\r\n" + c.getString(c.getColumnIndexOrThrow("review"));
+            }
+        }
+
+        c.close();
+
+        return currContent2;
+    }
+
+    public void saveToDatabase(View view) {
+        // Add code here to save to the database
+
+        DatabaseHelper mDbHelper = new DatabaseHelper(this);
+        SQLiteDatabase db = mDbHelper.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        reviewContent = (EditText) findViewById(R.id.ReviewText);
+
+        spinner = (Spinner)(findViewById(R.id.restaurants_spinner));
+         restaurant = spinner.getSelectedItem().toString();
+         review = reviewContent.getText().toString();
+        values.put("restaurantName", restaurant);
+        values.put("review", review);
+
+        long newRowId;
+        newRowId = db.insert("restaurantReview", null, values);
+
+        userReview.review = getReview(restaurant);
+
+        //db = mDbHelper.getReadableDatabase();
+/*
+        String[] projection = {
+                "restaurantName",
+                "review"
+        };
+
+
+        //String sortOrder = "name" + " DESC";
+
+        Cursor c = db.query("restaurantReview", projection, null, null, null, null, null);
+
+        c.moveToFirst();
+
+        currContent = "";
+        while(c.moveToNext()) {
+            currRestaurant = c.getString(c.getColumnIndexOrThrow("restaurantName"));
+            if (restaurant.equals(currRestaurant)) {
+                currContent += "\r\n" + "\r\n" + c.getString(c.getColumnIndexOrThrow("review"));
+            }
+        }
+
+        c.close();
+*/
+
+    }
+
+    public void loadFromDatabase(View view) {
+
+        // Add code here to load from the database
+        restaurantTest = (TextView)(findViewById(R.id.restaurant));
+        contentTest = (TextView)(findViewById(R.id.review));
+        restaurantTest.setText(currRestaurant);
+        contentTest.setText(currContent);
+
+
+    }
 
 }

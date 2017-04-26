@@ -14,9 +14,11 @@
         android:id="@+id/addReview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:text="Add a Review"
-        android:onClick="openWriteReview"/>
+        android:onClick="openWriteReview"
+        android:layout_marginTop="13dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
 
     <Button android:id="@+id/viewRestaurants"
         android:layout_width="match_parent"
