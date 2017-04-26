@@ -46,6 +46,7 @@
         <item>The Whiskey Jar</item>
 
     </string-array>
+<<<<<<< HEAD
     <string name="title_activity_view_restaurants">ViewRestaurants</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
@@ -137,5 +138,8 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+=======
+    <string name="title_activity_login">Sign in</string>
+>>>>>>> origin/master
 
 </resources>
