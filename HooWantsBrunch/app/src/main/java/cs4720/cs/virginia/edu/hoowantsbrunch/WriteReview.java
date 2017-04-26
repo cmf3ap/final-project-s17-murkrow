@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.view.View;
 
 import android.content.Intent;
@@ -130,8 +131,14 @@ public class WriteReview extends AppCompatActivity {
         saveToDatabase(view);
         loadFromDatabase(view);
 
+        viewRestaurants(view);
+
        // Intent intent = new Intent(this, MainActivity.class);
        // startActivity(intent);
+    }
+    public void viewRestaurants(View view) {
+        Intent intent = new Intent(this, ViewRestaurants.class);
+        startActivity(intent);
     }
     public void getImageFromLibrary(View view) {
         // Add code here to start the process of getting a picture from the library
@@ -218,6 +225,8 @@ public class WriteReview extends AppCompatActivity {
 
         c.moveToFirst();
 //formatting to display to users!!
+        //CORRECT CODE TO DISPLAY TO USERS!!!!!!!!!!!!!!!!!!
+        /*
         String currContent2 = "";
         while(c.moveToNext()) {
             String currRestaurant2 = c.getString(c.getColumnIndexOrThrow("restaurantName"));
@@ -226,6 +235,17 @@ public class WriteReview extends AppCompatActivity {
             }
         }
 
+
+*/
+
+        String currContent2 = "";
+        while(c.moveToNext()) {
+           // String currRestaurant2 = "<b>" + c.getString(c.getColumnIndexOrThrow("restaurantName")) +  "<b>";
+            String currRestaurant2 = c.getString(c.getColumnIndexOrThrow("restaurantName"));
+
+            currContent2 += c.getString(c.getColumnIndexOrThrow("restaurantName")) +
+                    "\r\n" + c.getString(c.getColumnIndexOrThrow("review")) +"\r\n" + "-----------------------" + "\r\n";
+        }
         c.close();
 
         return currContent2;
