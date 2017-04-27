@@ -73,7 +73,7 @@ public class EmailRestaurants extends AppCompatActivity {
     public void GetData(){
         spinner = (Spinner)(findViewById(R.id.emailSpinner));
         String restaurant = spinner.getSelectedItem().toString();
-        
+
 
         TO = "cmf3ap@gmail.com";
         SUBJECT = "Message from HooWantsBrunch user";

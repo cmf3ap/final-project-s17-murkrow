@@ -1,5 +1,6 @@
 package cs4720.cs.virginia.edu.hoowantsbrunch;
 
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -24,6 +25,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
@@ -93,6 +95,8 @@ public class WriteReview extends AppCompatActivity {
 // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
 
+
+
     }
 
     @Override
@@ -133,8 +137,8 @@ public class WriteReview extends AppCompatActivity {
 
         viewRestaurants(view);
 
-       // Intent intent = new Intent(this, MainActivity.class);
-       // startActivity(intent);
+        // Intent intent = new Intent(this, MainActivity.class);
+        // startActivity(intent);
     }
     public void viewRestaurants(View view) {
         Intent intent = new Intent(this, ViewRestaurants.class);
@@ -240,12 +244,42 @@ public class WriteReview extends AppCompatActivity {
 
         String currContent2 = "";
         while(c.moveToNext()) {
-           // String currRestaurant2 = "<b>" + c.getString(c.getColumnIndexOrThrow("restaurantName")) +  "<b>";
+            // String currRestaurant2 = "<b>" + c.getString(c.getColumnIndexOrThrow("restaurantName")) +  "<b>";
             String currRestaurant2 = c.getString(c.getColumnIndexOrThrow("restaurantName"));
 
             currContent2 += c.getString(c.getColumnIndexOrThrow("restaurantName")) +
                     "\r\n" + c.getString(c.getColumnIndexOrThrow("review")) +"\r\n" + "-----------------------" + "\r\n";
         }
+        c.close();
+
+        return currContent2;
+    }
+
+    public String getSpecificReview(String restaurant) {
+        DatabaseHelper mDbHelper = new DatabaseHelper(this);
+        SQLiteDatabase db = mDbHelper.getWritableDatabase();
+
+        String[] projection = {
+                "restaurantName",
+                "review"
+        };
+
+
+        //String sortOrder = "name" + " DESC";
+
+        Cursor c = db.query("restaurantReview", projection, null, null, null, null, null);
+
+        c.moveToFirst();
+
+        String currContent2 = restaurant + "\r\n";
+        while(c.moveToNext()) {
+            String currRestaurant2 = c.getString(c.getColumnIndexOrThrow("restaurantName"));
+            if (restaurant.equals(currRestaurant2)) {
+                currContent2 +=  c.getString(c.getColumnIndexOrThrow("review")) + "\r\n" + "\r\n";
+            }
+        }
+
+
         c.close();
 
         return currContent2;
@@ -261,15 +295,23 @@ public class WriteReview extends AppCompatActivity {
         reviewContent = (EditText) findViewById(R.id.ReviewText);
 
         spinner = (Spinner)(findViewById(R.id.restaurants_spinner));
-         restaurant = spinner.getSelectedItem().toString();
-         review = reviewContent.getText().toString();
+        restaurant = spinner.getSelectedItem().toString();
+        review = reviewContent.getText().toString();
         values.put("restaurantName", restaurant);
         values.put("review", review);
+
+
+        Bitmap bitmap = ((BitmapDrawable)imageView.getDrawable()).getBitmap();
+        if (bitmap != null) {
+            byte[] imageData = DatabaseHelper.getBytes(bitmap);
+            values.put("picture", imageData);
+        }
+
 
         long newRowId;
         newRowId = db.insert("restaurantReview", null, values);
 
-        userReview.review = getReview(restaurant);
+        userReview.review = getSpecificReview(restaurant);
 
         //db = mDbHelper.getReadableDatabase();
 /*

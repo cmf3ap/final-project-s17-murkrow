@@ -12,22 +12,11 @@
     tools:context="cs4720.cs.virginia.edu.hoowantsbrunch.WriteReview">
 
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/holo_orange_light"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="@style/AppTheme"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
-
-
-
     <Spinner
         android:id="@+id/restaurants_spinner"
         android:layout_width="450dp"
         android:layout_height="70dp"
+
         android:spinnerMode="dialog"
         android:text="Hello"
         android:layout_marginTop="73dp"
@@ -121,7 +110,7 @@
         android:layout_below="@+id/review"
         android:layout_toEndOf="@+id/review"
         android:layout_marginTop="61dp" />
-     <Button
+    <Button
         android:text="Submit Review"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
