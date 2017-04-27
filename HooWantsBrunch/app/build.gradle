@@ -33,15 +33,4 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-
-
-
-
-
-
-
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
 apply plugin: 'com.google.gms.google-services'

@@ -41,11 +41,6 @@
         android:layout_alignStart="@+id/findRestaurant"
         android:text="Contact a Restaurants" />
 
-    <Button android:id="@+id/selectRestaurant"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/menus"
-        android:layout_alignStart="@+id/menus"
-        android:text="Brunch Menus" />
+
 
 </RelativeLayout>

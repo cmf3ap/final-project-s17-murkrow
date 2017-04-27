@@ -40,16 +40,12 @@ public class MainActivity extends AppCompatActivity {
                 findRestaurant(view);
             }
         });
-<<<<<<< HEAD
 
 
 
-        menus = (Button) findViewById(R.id.menus);
-        menus.setOnClickListener(new View.OnClickListener() {
-=======
+
         emails = (Button) findViewById(R.id.email);
         emails.setOnClickListener(new View.OnClickListener() {
->>>>>>> origin/master
             @Override
             public void onClick(View view) {
                 openEMail(view);
