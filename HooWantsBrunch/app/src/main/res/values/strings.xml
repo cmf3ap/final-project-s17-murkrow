@@ -20,7 +20,6 @@
     <string name="title_activity_write_review">WriteReview</string>
     <string-array name="restaurants_array">
         <item>Aqui Es Mexico</item>
-        <item>Babes in the Wood</item>
         <item>Beer Run</item>
         <item>Bizou</item>
         <item>Blue Moon Diner</item>
@@ -29,7 +28,6 @@
         <item>Commonwealth Restaurant and Skybar</item>
         <item>Escafe</item>
         <item>Fellinis #9</item>
-        <item>Fossetts at Keswick Hall</item>
         <item>Grit Cafe</item>
         <item>Hamiltons at First and Main</item>
         <item>La Taza Coffeehouse</item>
@@ -42,9 +40,32 @@
         <item>The Nook Restaurant</item>
         <item>The Virginian</item>
         <item>Trinity Irish Pub</item>
-        <item>Vinegar Hill Cafe</item>
         <item>The Whiskey Jar</item>
-
+    </string-array>
+    <string-array name="locations_array">
+        <item>My Location</item>
+        <item>Aqui Es Mexico</item>
+        <item>Beer Run</item>
+        <item>Bizou</item>
+        <item>Blue Moon Diner</item>
+        <item>Bluegrass Grill and Bakery</item>
+        <item>Cafe Caturra</item>
+        <item>Commonwealth Restaurant and Skybar</item>
+        <item>Escafe</item>
+        <item>Fellinis #9</item>
+        <item>Grit Cafe</item>
+        <item>Hamiltons at First and Main</item>
+        <item>La Taza Coffeehouse</item>
+        <item>Maya Restaurant</item>
+        <item>Old Mill Room at Boars Head</item>
+        <item>Pointe Restaurant</item>
+        <item>Petit Pois</item>
+        <item>Rhetts River Grill and Raw Bar</item>
+        <item>Shadwells Restaurant</item>
+        <item>The Nook Restaurant</item>
+        <item>The Virginian</item>
+        <item>Trinity Irish Pub</item>
+        <item>The Whiskey Jar</item>
     </string-array>
     <string name="title_activity_view_restaurants">ViewRestaurants</string>
     <string name="large_text">
