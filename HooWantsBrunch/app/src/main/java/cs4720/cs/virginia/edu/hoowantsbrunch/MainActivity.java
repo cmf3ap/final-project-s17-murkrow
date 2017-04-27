@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         addReview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               openWriteReview(view);
+                openWriteReview(view);
             }
         });
         viewRestaurants = (Button) findViewById(R.id.viewRestaurants);
@@ -40,6 +40,10 @@ public class MainActivity extends AppCompatActivity {
                 findRestaurant(view);
             }
         });
+
+
+
+
         emails = (Button) findViewById(R.id.email);
         emails.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,10 +53,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+
+
     public void openWriteReview(View view) {
         Intent intent = new Intent(this, WriteReview.class);
         startActivity(intent);
     }
+
 
     public void viewRestaurants(View view) {
         Intent intent = new Intent(this, ViewRestaurants.class);
