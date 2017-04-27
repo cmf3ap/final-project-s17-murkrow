@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cs4720.cs.virginia.edu.hoowantsbrunch.EmailRestaurants">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/emailToolbar"
+        android:layout_width="600dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_orange_light"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/AppTheme"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+    <ImageButton
+        android:id="@+id/emailBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:src="@drawable/back"
+        android:layout_gravity="left"
+        style="?android:attr/borderlessButtonStyle" />
+
+    <TextView
+        android:id="@+id/PickARestaurant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="@+id/emailToolbar"
+        android:layout_below="@+id/emailToolbar"
+        android:text="Pick a Restaurant to Email"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+    
+    <Spinner
+        android:id="@+id/emailSpinner"
+        android:layout_width="450dp"
+        android:layout_height="70dp"
+        android:spinnerMode="dialog"
+        android:text="Hello"
+        android:layout_below="@+id/PickARestaurant"
+        android:layout_alignParentStart="@+id/PickARestaurant" />
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    
+
+
+</RelativeLayout>
