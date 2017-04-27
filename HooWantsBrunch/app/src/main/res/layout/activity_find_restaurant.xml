@@ -25,21 +25,12 @@
             android:layout_gravity="left"
             style="?android:attr/borderlessButtonStyle" />
 
-    <TextView
-        android:id="@+id/toolbar_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Find Restaurants"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title"
-        android:textColor="@android:color/white"
-        android:textSize="30sp" />
-
 
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/findToolbar"
         android:background="@color/wallet_bright_foreground_holo_dark">
 
         <TextView

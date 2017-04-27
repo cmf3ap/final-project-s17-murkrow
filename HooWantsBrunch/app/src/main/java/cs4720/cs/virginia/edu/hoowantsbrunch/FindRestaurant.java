@@ -58,13 +58,13 @@ public class FindRestaurant extends FragmentActivity implements OnMapReadyCallba
             ActivityCompat.requestPermissions(this, new String[] { android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION }, TAKE_PHOTO_PERMISSION);
         }
 
-        SupportMapFragment mapFragment = ((SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.map));
+        MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
         if (mapFragment != null) {
             mapFragment.getMapAsync(this);
         }
 
         backToMain = (ImageButton) findViewById(R.id.backButton);
-        backToMain.setOnClickListener(new View.OnClickListener() {
+        backToMain.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 back(view);
@@ -135,6 +135,8 @@ public class FindRestaurant extends FragmentActivity implements OnMapReadyCallba
         LatLng whiskey = new LatLng(38.031391, -78.482762);
         map.addMarker(new MarkerOptions().position(whiskey).title("The Whiskey Jar"));
 
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(rotunda, 14), 1500, null);
+
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             map.setMyLocationEnabled(true);
             LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -148,7 +150,6 @@ public class FindRestaurant extends FragmentActivity implements OnMapReadyCallba
                 location = locationManager.getLastKnownLocation(provider);
             } else if (location!=null){
                 LatLng userLocation = new LatLng(location.getLatitude(), location.getLongitude());
-                me = userLocation;
                 map.animateCamera(CameraUpdateFactory.newLatLngZoom(userLocation, 14), 1500, null);
 
                 double aQUI = distance(location.getLatitude(), location.getLongitude(), 38.023212, -78.470213);

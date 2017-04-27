@@ -43,10 +43,32 @@
         android:layout_alignParentStart="@+id/PickARestaurant" />
     
     <TextView
+        android:id="@+id/messageTitle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/emailSpinner"
+        android:layout_alignStart="@+id/emailSpinner"
+        android:text="Write your message to the selected restaurant"/>
 
-    
+    <EditText
+        android:id="@+id/message"
+        android:layout_width="450dp"
+        android:layout_height="100dp"
+        android:ems="10"
+        android:textAlignment="center"
+        android:inputType="textPersonName"
+        android:hint="Type your message here"
+        android:layout_marginTop="35dp"
+        android:layout_below="@+id/messageTitle"
+        android:layout_alignParentStart="@+id/messageTitle" />
+
+    <Button
+        android:id="@+id/send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send Message"
+        android:layout_below="@+id/message"
+        android:layout_alignStart="@+id/message"/>
 
 
 </RelativeLayout>
