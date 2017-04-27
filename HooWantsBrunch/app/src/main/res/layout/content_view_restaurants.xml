@@ -12,8 +12,8 @@
         android:id="@+id/ReviewContent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="25dp"
         android:layout_margin="@dimen/text_margin"
-        android:textSize="30dp"
         android:text="" />
 
 </android.support.v4.widget.NestedScrollView>
