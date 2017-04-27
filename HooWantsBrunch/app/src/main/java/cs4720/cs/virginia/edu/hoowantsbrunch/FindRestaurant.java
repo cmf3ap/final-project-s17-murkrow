@@ -32,18 +32,15 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import android.support.v4.app.FragmentManager;
 
 import android.support.v4.app.FragmentActivity;
 
 public class FindRestaurant extends FragmentActivity implements OnMapReadyCallback {
 
-    private GoogleApiClient mGoogleApiClient;
     private ImageButton backToMain;
-    LocationManager locationManager;
     private static final int TAKE_PHOTO_PERMISSION = 1;
     TextView nearestLocation;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +55,7 @@ public class FindRestaurant extends FragmentActivity implements OnMapReadyCallba
             ActivityCompat.requestPermissions(this, new String[] { android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION }, TAKE_PHOTO_PERMISSION);
         }
 
-        MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
+        SupportMapFragment mapFragment = ((SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.map));
         if (mapFragment != null) {
             mapFragment.getMapAsync(this);
         }

@@ -60,7 +60,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                     Log.d(TAG, "onAuthStateChanged:signed_out");
                 }
 
-                updateUI(user);
+                // updateUI(user);
             }
         };
     }
@@ -171,7 +171,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
             findViewById(R.id.email_password_buttons).setVisibility(View.GONE);
             findViewById(R.id.email_password_fields).setVisibility(View.GONE);
             findViewById(R.id.signed_in_buttons).setVisibility(View.VISIBLE);
-
             findViewById(R.id.verify_email_button).setEnabled(!user.isEmailVerified());
         } else {
 
