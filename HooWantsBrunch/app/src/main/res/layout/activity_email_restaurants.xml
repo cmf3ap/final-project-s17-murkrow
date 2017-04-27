@@ -41,14 +41,24 @@
         android:text="Hello"
         android:layout_below="@+id/PickARestaurant"
         android:layout_alignParentStart="@+id/PickARestaurant" />
-    
+
+    <TextView
+        android:id="@+id/emailNotThere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="30dp"
+        android:layout_below="@+id/emailSpinner"
+        android:layout_alignStart="@+id/emailSpinner"
+        android:text="Restaurants not in the drop-down menu do not have an email to contact."/>
+
     <TextView
         android:id="@+id/messageTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/emailSpinner"
-        android:layout_alignStart="@+id/emailSpinner"
-        android:text="Write your message to the selected restaurant"/>
+        android:layout_alignStart="@+id/emailNotThere"
+        android:layout_below="@+id/emailNotThere"
+        android:text="Write your message to the selected restaurant"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
     <EditText
         android:id="@+id/message"

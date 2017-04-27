@@ -26,7 +26,7 @@ public class EmailRestaurants extends AppCompatActivity {
 
         spinner = (Spinner) findViewById(R.id.emailSpinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.restaurants_array, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.email_array, android.R.layout.simple_spinner_item);
         // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
@@ -73,9 +73,39 @@ public class EmailRestaurants extends AppCompatActivity {
     public void GetData(){
         spinner = (Spinner)(findViewById(R.id.emailSpinner));
         String restaurant = spinner.getSelectedItem().toString();
-
-
-        TO = "cmf3ap@gmail.com";
+        if (restaurant == "Beer Run") {
+            TO = "info@beerrun.com";
+        } else if (restaurant == "Bizou") {
+            TO = "bizoudowntown@gmail.com";
+        } else if (restaurant == "Blue Moon Diner") {
+            TO = "info@bluemoondiner.net";
+        } else if (restaurant == "Bluegrass Grill and Bakery") {
+            TO = "chrissy@bluegrasscville.com";
+        } else if (restaurant == "Cafe Caturra") {
+            TO = "info@cafecaturra.com";
+        } else if (restaurant == "Commonwealth Restaurant and Skybar") {
+            TO = "info@commonwealthskybar.com";
+        } else if (restaurant == "Escafe") {
+            TO = "out@escafe.com";
+        } else if (restaurant == "Grit Cafe") {
+            TO = "connect@gritcoffee.com";
+        } else if (restaurant == "Hamiltons at First and Main") {
+            TO = "mail@hamiltonsrestaurant.com";
+        } else if (restaurant == "La Taza Coffeehouse") {
+            TO = "contact@latazacville.com";
+        } else if (restaurant == "Maya Restaurant") {
+            TO = "maya.cville.restaurant@gmail.com";
+        } else if (restaurant == "Petit Pois") {
+            TO = "info@petitpoisrestaurant.com";
+        } else if (restaurant == "Rhetts River Grill and Raw Bar") {
+            TO = "rhett@rhettsrivergrill.com";
+        } else if (restaurant == "Shadwells Restaurant") {
+            TO = "shadwells@shadwellsrestaurant.com";
+        } else if (restaurant == "The Whiskey Jar") {
+            TO = "Thewhiskeyjar@gmail.com";
+        } else {
+            TO = "cmf3ap@gmail.com";
+        }
         SUBJECT = "Message from HooWantsBrunch user";
         MESSAGE = editMessage.getText().toString();
     }

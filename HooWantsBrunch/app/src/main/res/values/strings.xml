@@ -67,6 +67,23 @@
         <item>Trinity Irish Pub</item>
         <item>The Whiskey Jar</item>
     </string-array>
+    <string-array name="email_array">
+        <item>Beer Run</item>
+        <item>Bizou</item>
+        <item>Blue Moon Diner</item>
+        <item>Bluegrass Grill and Bakery</item>
+        <item>Cafe Caturra</item>
+        <item>Commonwealth Restaurant and Skybar</item>
+        <item>Escafe</item>
+        <item>Grit Cafe</item>
+        <item>Hamiltons at First and Main</item>
+        <item>La Taza Coffeehouse</item>
+        <item>Maya Restaurant</item>
+        <item>Petit Pois</item>
+        <item>Rhetts River Grill and Raw Bar</item>
+        <item>Shadwells Restaurant</item>
+        <item>The Whiskey Jar</item>
+    </string-array>
     <string name="title_activity_view_restaurants">ViewRestaurants</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
