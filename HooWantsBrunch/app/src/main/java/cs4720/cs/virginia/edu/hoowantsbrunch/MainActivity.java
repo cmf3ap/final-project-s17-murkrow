@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private Button addReview;
     private Button findRestaurants;
     private Button viewRestaurants;
-    private Button menus;
+    private Button emails;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,14 +40,19 @@ public class MainActivity extends AppCompatActivity {
                 findRestaurant(view);
             }
         });
+<<<<<<< HEAD
 
 
 
         menus = (Button) findViewById(R.id.menus);
         menus.setOnClickListener(new View.OnClickListener() {
+=======
+        emails = (Button) findViewById(R.id.email);
+        emails.setOnClickListener(new View.OnClickListener() {
+>>>>>>> origin/master
             @Override
             public void onClick(View view) {
-                openMenus(view);
+                openEMail(view);
             }
         });
 
@@ -71,8 +76,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openMenus(View view) {
-        Intent intent = new Intent(this, MenusActivity.class);
+    public void openEMail(View view) {
+        Intent intent = new Intent(this, EmailRestaurants.class);
         startActivity(intent);
     }
     

@@ -34,12 +34,12 @@
         android:layout_alignStart="@+id/viewRestaurants"
         android:text="Find Closest Restaurant to Me" />
 
-    <Button android:id="@+id/menus"
+    <Button android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/findRestaurant"
         android:layout_alignStart="@+id/findRestaurant"
-        android:text="Brunch Menus" />
+        android:text="Contact a Restaurants" />
 
     <Button android:id="@+id/selectRestaurant"
         android:layout_width="match_parent"
