@@ -44,7 +44,7 @@ public class ViewRestaurants extends AppCompatActivity {
         imageView1 = (ImageView)findViewById(R.id.imageView1);
         imageView2 = (ImageView)findViewById(R.id.imageView2);
         imageView3 = (ImageView)findViewById(R.id.imageView3);
-        backButton = (ImageButton)findViewById(R.id.backButton);
+        backButton = (ImageButton)findViewById(R.id.backButton2);
 // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.restaurants_array, android.R.layout.simple_spinner_item);
@@ -127,8 +127,8 @@ public class ViewRestaurants extends AppCompatActivity {
             }
         });
 
-        backButton = (ImageButton) findViewById(R.id.backButton);
-        fab.setOnClickListener(new View.OnClickListener() {
+        backButton = (ImageButton) findViewById(R.id.backButton2);
+        backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 backToMain(view);
