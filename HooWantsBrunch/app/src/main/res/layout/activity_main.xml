@@ -12,34 +12,46 @@
 
     <Button
         android:id="@+id/addReview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:text="Add a Review"
+        android:textSize="35dp"
         android:onClick="openWriteReview"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="74dp"
+        android:layout_marginStart="22dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
 
     <Button android:id="@+id/viewRestaurants"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/addReview"
-        android:layout_alignStart="@+id/addReview"
-        android:text="View Local Restaurants" />
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:textSize="32dp"
+
+        android:text="View Local Restaurants"
+        android:layout_above="@+id/email"
+        android:layout_toEndOf="@+id/addReview"
+        android:layout_marginStart="27dp" />
 
     <Button android:id="@+id/findRestaurant"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/viewRestaurants"
-        android:layout_alignStart="@+id/viewRestaurants"
-        android:text="Find Closest Restaurant to Me" />
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+
+        android:text="Find Closest Restaurant to Me"
+        android:textSize="35dp"
+
+        android:layout_alignTop="@+id/email"
+        android:layout_alignStart="@+id/addReview" />
 
     <Button android:id="@+id/email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/findRestaurant"
-        android:layout_alignStart="@+id/findRestaurant"
-        android:text="Contact a Restaurants" />
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+
+        android:text="Contact a Restaurant"
+        android:layout_marginTop="72dp"
+        android:textSize="35dp"
+
+        android:layout_below="@+id/addReview"
+        android:layout_alignStart="@+id/viewRestaurants" />
 
 
 

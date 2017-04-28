@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,6 +19,10 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.io.File;
+
+import static cs4720.cs.virginia.edu.hoowantsbrunch.userReview.review;
+
 public class ViewRestaurants extends AppCompatActivity {
 
     TextView reviewText;
@@ -25,6 +30,7 @@ public class ViewRestaurants extends AppCompatActivity {
     ImageView imageView1;
     ImageView imageView2;
     ImageView imageView3;
+    ImageButton backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +44,7 @@ public class ViewRestaurants extends AppCompatActivity {
         imageView1 = (ImageView)findViewById(R.id.imageView1);
         imageView2 = (ImageView)findViewById(R.id.imageView2);
         imageView3 = (ImageView)findViewById(R.id.imageView3);
+        backButton = (ImageButton)findViewById(R.id.backButton);
 // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.restaurants_array, android.R.layout.simple_spinner_item);
@@ -51,6 +58,9 @@ public class ViewRestaurants extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 spinner = (Spinner)(findViewById(R.id.spinner2));
                 String restaurantName = spinner.getSelectedItem().toString();
+                imageView1.setImageBitmap(null);
+                imageView2.setImageBitmap(null);
+                imageView3.setImageBitmap(null);
                 reviewText.setText(getReview(restaurantName));
 
             }
@@ -117,17 +127,25 @@ public class ViewRestaurants extends AppCompatActivity {
             }
         });
 
-
+        backButton = (ImageButton) findViewById(R.id.backButton);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                backToMain(view);
+            }
+        });
     }
 
     private String getReview(String restaurantName) {
         DatabaseHelper mDbHelper = new DatabaseHelper(this);
         SQLiteDatabase db = mDbHelper.getWritableDatabase();
 
+
+
         String[] projection = {
                 "restaurantName",
                 "review",
-                "picture"
+                "picturePath"
         };
 
 
@@ -151,12 +169,23 @@ public class ViewRestaurants extends AppCompatActivity {
                     default: break;
                 }
                 if (myImageView != null) {
-                    byte[] imageData = c.getBlob(c.getColumnIndexOrThrow("picture"));
+                    String pPath = c.getString(c.getColumnIndexOrThrow("picturePath"));
+                    if ((pPath != null) && (pPath.length() > 0)) {
+                        File imgFile = new File(pPath);
+
+                        if (imgFile.exists()) {
+                            Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+                            myImageView.setImageBitmap(myBitmap);
+                            imageCount++;
+
+                        }
+                    }
+                    /*
                     if (imageData != null) {
                         Bitmap bitmap = DatabaseHelper.getImage(imageData);
                         myImageView.setImageBitmap(bitmap);
                         imageCount++;
-                    }
+                    } */
                 }
             }
         }
@@ -169,6 +198,11 @@ public class ViewRestaurants extends AppCompatActivity {
 
     public void openWriteReview(View view) {
         Intent intent = new Intent(this, WriteReview.class);
+        startActivity(intent);
+    }
+
+    public void backToMain(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }

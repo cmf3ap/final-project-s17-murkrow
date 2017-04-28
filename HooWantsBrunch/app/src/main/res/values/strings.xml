@@ -18,6 +18,11 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_write_review">WriteReview</string>
+    <string-array name="canned_review_array">
+        <item>%1$s serves the best food in the world. There is no better place to eat than %1$s. The wait staff are nice, the cashiers are nice, the food is great, and I could not ask for more! They have earned a loyal customer for life.</item>
+        <item>%1$s is located close to campus and is great to eat at. Service is quick and everyone is very friendly.</item>
+        <item>%1$s is not so great. I prefer the restaurant next door to them...they charged me for the tap water and forgot about me. I waited forever to be served!</item>
+    </string-array>
     <string-array name="restaurants_array">
         <item>Aqui Es Mexico</item>
         <item>Beer Run</item>

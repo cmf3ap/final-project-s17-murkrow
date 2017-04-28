@@ -32,7 +32,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity"
+            android:label="Welcome to HooWantsBrunch!"
+            />
         <activity
             android:name=".WriteReview"
             android:label="Write a Review"
@@ -40,6 +42,7 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name=".FindRestaurant"
+            android:theme="@style/AppTheme"
             android:parentActivityName=".MainActivity" />
 
         <meta-data
@@ -48,7 +51,7 @@
 
         <activity
             android:name=".ViewRestaurants"
-            android:label="Restaurant Reviews"
+            android:label="      Restaurant Reviews"
             android:theme="@style/AppTheme.NoActionBar">
             android:parentActivityName=".MainActivity" />
         </activity>
@@ -60,7 +63,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".EmailRestaurants"></activity>
+        <activity android:name=".EmailRestaurants"
+            android:theme="@style/AppTheme"
+        android:label="Email Restaurants">
+
+        </activity>
 
     </application>
 

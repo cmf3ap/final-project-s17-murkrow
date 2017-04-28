@@ -56,10 +56,8 @@ public class WriteReview extends AppCompatActivity {
     static final int PICK_IMAGE_REQUEST = 3;
 
     ImageView imageView;
-    Button takePictureButton;
+    ImageButton takePictureButton;
     EditText reviewContent;
-    TextView restaurantTest;
-    TextView contentTest;
     Uri file;
     Spinner spinner;
     String currRestaurant;
@@ -75,7 +73,7 @@ public class WriteReview extends AppCompatActivity {
 
         setContentView(R.layout.activity_write_review);
 
-        takePictureButton = (Button) findViewById(R.id.takePictureButton);
+        takePictureButton = (ImageButton) findViewById(R.id.takePictureButton);
         imageView = (ImageView) findViewById(R.id.imageView);
         reviewContent = (EditText) findViewById(R.id.ReviewText);
 
@@ -94,9 +92,6 @@ public class WriteReview extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
-
-
-
     }
 
     @Override
@@ -301,10 +296,20 @@ public class WriteReview extends AppCompatActivity {
         values.put("review", review);
 
 
-        Bitmap bitmap = ((BitmapDrawable)imageView.getDrawable()).getBitmap();
-        if (bitmap != null) {
-            byte[] imageData = DatabaseHelper.getBytes(bitmap);
-            values.put("picture", imageData);
+        if(imageView.getDrawable() instanceof BitmapDrawable){
+            Bitmap bitmap = ((BitmapDrawable)imageView.getDrawable()).getBitmap();
+            if (bitmap != null) {
+                //byte[] imageData = DatabaseHelper.getBytes(bitmap);
+                try {
+                    File f = DatabaseHelper.savebitmap(bitmap);
+                    String pPath = f.getAbsolutePath();
+                    values.put("picturePath", pPath);
+                }
+                catch (Exception e) {
+
+                }
+            }
+
         }
 
 
@@ -342,11 +347,7 @@ public class WriteReview extends AppCompatActivity {
 
     public void loadFromDatabase(View view) {
 
-        // Add code here to load from the database
-        restaurantTest = (TextView)(findViewById(R.id.restaurant));
-        contentTest = (TextView)(findViewById(R.id.review));
-        restaurantTest.setText(currRestaurant);
-        contentTest.setText(currContent);
+
 
 
     }

@@ -29,11 +29,6 @@
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-            <Spinner
-                android:id="@+id/spinner2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
@@ -48,41 +43,55 @@
         app:layout_anchorGravity="bottom|end"
         app:srcCompat="@android:drawable/ic_menu_add" />
 
-    <include layout="@layout/content_view_restaurants"
-        android:id="@+id/include"
-        android:layout_height="443dp" />
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_height="50dp"
+        android:layout_width="454dp"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="left|center_horizontal"/>
+
 
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_below="@+id/imageLibraryButton"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="bottom|center_horizontal"
-        app:layout_anchor="@+id/include"
-        app:layout_anchorGravity="center_vertical|center_horizontal"
-        app:srcCompat="@android:color/background_light" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="126dp"
+        android:layout_height="120dp"
         android:layout_below="@+id/imageLibraryButton3"
         android:layout_centerHorizontal="true"
-        android:layout_gravity="bottom|right"
-        app:layout_anchor="@+id/include"
-        app:layout_anchorGravity="center_vertical|left"
+        android:layout_gravity="bottom|left"
         app:srcCompat="@android:color/background_light" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="126dp"
+        android:layout_height="126dp"
         android:layout_below="@+id/imageLibraryButton2"
         android:layout_centerHorizontal="true"
-        android:layout_gravity="bottom|left"
-        app:layout_anchor="@+id/include"
-        app:layout_anchorGravity="center_vertical|right"
+        android:layout_gravity="bottom|center_horizontal"
         app:srcCompat="@android:color/background_light" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="120dp"
+        android:layout_height="128dp"
+        android:layout_below="@+id/imageLibraryButton"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="bottom|right"
+        app:srcCompat="@android:color/background_light" />
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_view_restaurants"
+        android:layout_height="541dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="494dp"
+        android:layout_height="68dp"
+        android:layout_gravity="bottom|right"
+        android:text="  Photos by reviewers - submit your own!"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="bottom|left" />
 
 </android.support.design.widget.CoordinatorLayout>
