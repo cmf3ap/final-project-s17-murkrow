@@ -1,3 +1,5 @@
+// Code based off Google's example code for sign-in https://github.com/firebase/firebase-login-demo-android/blob/master/app/src/main/java/com/firebase/samples/logindemo/MainActivity.java
+
 package cs4720.cs.virginia.edu.hoowantsbrunch;
 
 import android.content.Intent;
