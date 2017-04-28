@@ -48,7 +48,7 @@
                 android:id="@+id/title_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="HooWants Brunch Login"
+                android:text="HooWantsBrunch Login"
                 android:textAlignment="center"
                 android:textAppearance="@android:style/TextAppearance.Material.Title"
                 android:textSize="30sp" />
