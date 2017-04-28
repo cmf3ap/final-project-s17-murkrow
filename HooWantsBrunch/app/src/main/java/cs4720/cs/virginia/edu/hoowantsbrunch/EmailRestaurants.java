@@ -77,35 +77,35 @@ public class EmailRestaurants extends AppCompatActivity {
     public void GetData(){
         spinner = (Spinner)(findViewById(R.id.emailSpinner));
         String restaurant = spinner.getSelectedItem().toString();
-        if (restaurant == "Beer Run") {
+        if (restaurant.equals("Beer Run")) {
             TO = "info@beerrun.com";
-        } else if (restaurant == "Bizou") {
+        } else if (restaurant.equals("Bizou")) {
             TO = "bizoudowntown@gmail.com";
-        } else if (restaurant == "Blue Moon Diner") {
+        } else if (restaurant.equals("Blue Moon Diner")) {
             TO = "info@bluemoondiner.net";
-        } else if (restaurant == "Bluegrass Grill and Bakery") {
+        } else if (restaurant.equals("Bluegrass Grill and Bakery")) {
             TO = "chrissy@bluegrasscville.com";
-        } else if (restaurant == "Cafe Caturra") {
+        } else if (restaurant.equals("Cafe Caturra")) {
             TO = "info@cafecaturra.com";
-        } else if (restaurant == "Commonwealth Restaurant and Skybar") {
+        } else if (restaurant.equals("Commonwealth Restaurant and Skybar")) {
             TO = "info@commonwealthskybar.com";
-        } else if (restaurant == "Escafe") {
+        } else if (restaurant.equals("Escafe")) {
             TO = "out@escafe.com";
-        } else if (restaurant == "Grit Cafe") {
+        } else if (restaurant.equals("Grit Cafe")) {
             TO = "connect@gritcoffee.com";
-        } else if (restaurant == "Hamiltons at First and Main") {
+        } else if (restaurant.equals("Hamiltons at First and Main")) {
             TO = "mail@hamiltonsrestaurant.com";
-        } else if (restaurant == "La Taza Coffeehouse") {
+        } else if (restaurant.equals("La Taza Coffeehouse")) {
             TO = "contact@latazacville.com";
-        } else if (restaurant == "Maya Restaurant") {
+        } else if (restaurant.equals("Maya Restaurant")) {
             TO = "maya.cville.restaurant@gmail.com";
-        } else if (restaurant == "Petit Pois") {
+        } else if (restaurant.equals("Petit Pois")) {
             TO = "info@petitpoisrestaurant.com";
-        } else if (restaurant == "Rhetts River Grill and Raw Bar") {
+        } else if (restaurant.equals("Rhetts River Grill and Raw Bar")) {
             TO = "rhett@rhettsrivergrill.com";
-        } else if (restaurant == "Shadwells Restaurant") {
+        } else if (restaurant.equals("Shadwells Restaurant")) {
             TO = "shadwells@shadwellsrestaurant.com";
-        } else if (restaurant == "The Whiskey Jar") {
+        } else if (restaurant.equals("The Whiskey Jar")) {
             TO = "Thewhiskeyjar@gmail.com";
         } else {
             TO = "cmf3ap@gmail.com";
