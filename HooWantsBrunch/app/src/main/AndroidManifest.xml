@@ -44,7 +44,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBaFDac9Rv2ii9KvBLjQaFc1ZgQp4Qwm2A" />
+            android:value="AIzaSyApZfDKBhkypCD2yOtDdorg_9pNfvV6YIE" />
 
         <activity
             android:name=".ViewRestaurants"

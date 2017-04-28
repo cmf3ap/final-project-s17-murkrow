@@ -229,9 +229,13 @@ public class FindRestaurant extends FragmentActivity implements OnMapReadyCallba
                     nearestLocation.setText("Nearest Restaurant = The Whiskey Jar");
                 }
             }
-            LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
-            CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 17);
-            map.animateCamera(cameraUpdate);
+            if (location != null) {
+                LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
+                CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 17);
+                map.animateCamera(cameraUpdate);
+            } else {
+                map.moveCamera(CameraUpdateFactory.newLatLngZoom(rotunda, 14.0f));
+            }
         } else {
             map.moveCamera(CameraUpdateFactory.newLatLngZoom(rotunda, 14.0f));
         }
